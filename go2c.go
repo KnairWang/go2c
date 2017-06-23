@@ -10,7 +10,7 @@ import "C"
 import "unsafe"
 
 // ConvertStringArrayToChars convert go string array into C char**;
-// Directly return is int, unsafe.Pointer should cast to C type;
+// Directly return is int, unsafe.Pointer, should be cast to C type;
 // Example:
 // 		c, v := go2c.ConvertStringArrayToChars(os.Args)
 // 		argc := C.int(c)
