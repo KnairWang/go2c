@@ -25,3 +25,16 @@ func ConvertStringArrayToChars(args []string) (argc int, argv unsafe.Pointer) {
 	argv = C.pointerToArray(C.int(argc), C.CString(s))
 	return
 }
+
+// GoConvertStringArrayToChars convert go string array into C char**;
+// See "<ConvertStringArrayToChars>" also;
+func GoConvertStringArrayToChars(args []string) (argc int, argv unsafe.Pointer) {
+	argc = len(args)
+	var s string
+	for _, v := range args {
+		s += v
+		s += "\x00"
+	}
+	argv = unsafe.Pointer(&s)
+	return
+}
