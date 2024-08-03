@@ -1,4 +1,4 @@
 # go2c
-link Golang and C, some easy tools in there.
+example to link Golang and C.
 
-To use this, **gcc** is needed; 
+To use this, **gcc** is needed.
